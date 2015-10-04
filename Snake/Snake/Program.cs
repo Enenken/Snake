@@ -10,40 +10,21 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1,3,'*');
-          
-            //p1.Draw();
+            Console.SetBufferSize(80, 25);
+            
 
-            Point p2 = new Point(4,5,'*');
 
-            //p2.Draw();
-
-            Point p3 = new Point(10, 10, '%');
-            Point p4 = new Point(9, 1, '&');
-
-            List<int> spisok = new List<int>();
-            spisok.Add(9);
-            spisok.Add(1);
-            spisok.Add(1);
-
-            foreach(int i in spisok)
-            {
-                Console.WriteLine(i);
-
-            }
-
-            List<Point> tochki = new List<Point>();
-            tochki.Add(p1);
-            tochki.Add(p2);
-            tochki.Add(p3);
-            tochki.Add(p4);
-            foreach (Point i in tochki)
-            {
-                i.Draw();
-
-            }
-
-            Console.ReadLine();
+            HorizontalLine Gline1 = new HorizontalLine(0,78,0,'*');
+            VertikalLine Vline1 = new VertikalLine(0, 24,0, '*');
+            VertikalLine Vline2 = new VertikalLine(0, 24, 78, '*');
+            HorizontalLine Gline2 = new HorizontalLine(0,78, 24, '*');
+            Gline1.Draw();
+            Gline2.Draw();
+            Vline1.Draw();
+            Vline2.Draw();
+            Point p = new Point(4,5,'*');
+            Snake snake = new Snake(p,4,Direction.RIGHT);
+            snake.Draw();
         }
        
     }
